@@ -10,15 +10,12 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Dawid
- */
 public class Kalendarz extends JPanel implements ActionListener {
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	private int dayOfWeek;
     private int monthOfYear;
     private int dayOfMonth;
@@ -36,9 +33,10 @@ public class Kalendarz extends JPanel implements ActionListener {
     private JLabel lFriday;
     private JLabel lSaturday;
     private JLabel lSunday;
+    private JLabel lMenu;
     private JButton[] button;
     
-    /*KALENDARZ - UTWORZENIE*/
+    /*KONSTRUKTOR KALENDARZ - UTWORZENIE*/
     public Kalendarz() {
         this.button = new JButton[42];
         GregorianCalendar nowDate = new GregorianCalendar();
@@ -49,62 +47,62 @@ public class Kalendarz extends JPanel implements ActionListener {
         if(this.monthNameNOW == GregorianCalendar.JANUARY) {
             this.setMonthOfYear(1);
             this.setDayOfMonth(31);
-            this.setNameMonth("Styczeñ");
+            this.setNameMonth("January");
         }
         else if(this.monthNameNOW == GregorianCalendar.FEBRUARY) {
             this.setMonthOfYear(2);
             this.setDayOfMonth(28);
-            this.setNameMonth("Luty");
+            this.setNameMonth("February");
         }
         else if(this.monthNameNOW == GregorianCalendar.MARCH) {
             this.setMonthOfYear(3);
             this.setDayOfMonth(31);
-            this.setNameMonth("Marzec");
+            this.setNameMonth("March");
         }
         else if(this.monthNameNOW == GregorianCalendar.APRIL) {
             this.setMonthOfYear(4);
             this.setDayOfMonth(30);
-            this.setNameMonth("Kwiecieñ");
+            this.setNameMonth("April");
         }
         else if(this.monthNameNOW == GregorianCalendar.MAY) {
             this.setMonthOfYear(5);
             this.setDayOfMonth(31);
-            this.setNameMonth("Maj");
+            this.setNameMonth("May");
         }
         else if(this.monthNameNOW == GregorianCalendar.JUNE) {
             this.setMonthOfYear(6);
             this.setDayOfMonth(30);
-            this.setNameMonth("Czerwiec");
+            this.setNameMonth("June");
         }
         else if(this.monthNameNOW == GregorianCalendar.JULY) {
             this.setMonthOfYear(7);
             this.setDayOfMonth(31);
-            this.setNameMonth("Lipiec");
+            this.setNameMonth("July");
         }
         else if(this.monthNameNOW == GregorianCalendar.AUGUST) {
             this.setMonthOfYear(8);
             this.setDayOfMonth(31);
-            this.setNameMonth("Sierpieñ");
+            this.setNameMonth("August");
         }
         else if(this.monthNameNOW == GregorianCalendar.SEPTEMBER) {
             this.setMonthOfYear(9);
             this.setDayOfMonth(30);
-            this.setNameMonth("Wrzesieñ");
+            this.setNameMonth("September");
         }
         else if(this.monthNameNOW == GregorianCalendar.OCTOBER) {
             this.setMonthOfYear(10);
             this.setDayOfMonth(31);
-            this.setNameMonth("PaŸdziernik");
+            this.setNameMonth("October");
         }
         else if(this.monthNameNOW == GregorianCalendar.NOVEMBER) {
             this.setMonthOfYear(11);
             this.setDayOfMonth(30);
-            this.setNameMonth("Listopad");
+            this.setNameMonth("November");
         }
         else if(this.monthNameNOW == GregorianCalendar.DECEMBER) {
             this.setMonthOfYear(12);
             this.setDayOfMonth(31);
-            this.setNameMonth("Grudzieñ");
+            this.setNameMonth("December");
         }
         if(this.dayNameNOW == GregorianCalendar.MONDAY)
             this.setDayOfWeek(1);
@@ -120,62 +118,77 @@ public class Kalendarz extends JPanel implements ActionListener {
             this.setDayOfWeek(6);
         else if(this.dayNameNOW == GregorianCalendar.SUNDAY)
             this.setDayOfWeek(7);
+        
         //ETYKIETY
         this.lMonth = new JLabel(this.getNameMonth());
         this.lMonth.setBounds(295, -25, 90, 90);
         this.lMonth.setFont(new Font("Arial", Font.BOLD, 20));
         
-        this.lMonday = new JLabel("Poniedzia³ek");
-        this.lMonday.setBounds(18, 5, 90, 90);
+        this.lMenu = new JLabel("Menu");
+        this.lMenu.setBounds(780, -25, 90, 90);
+        this.lMenu.setFont(new Font("Arial", Font.BOLD, 20));
+        
+        this.lMonday = new JLabel("Monday");
+        this.lMonday.setBounds(30, 5, 90, 90);
         this.lMonday.setFont(new Font("Arial", Font.BOLD, 12));
         
-        this.lTuesday = new JLabel("Wtorek");
-        this.lTuesday.setBounds(126, 5, 90, 90);
+        this.lTuesday = new JLabel("Tuesday");
+        this.lTuesday.setBounds(120, 5, 90, 90);
         this.lTuesday.setFont(new Font("Arial", Font.BOLD, 12));
         
-        this.lWednesday = new JLabel("Œroda");
-        this.lWednesday.setBounds(216, 5, 90, 90);
+        this.lWednesday = new JLabel("Wednesday");
+        this.lWednesday.setBounds(200, 5, 90, 90);
         this.lWednesday.setFont(new Font("Arial", Font.BOLD, 12));
         
-        this.lThursday = new JLabel("Czwartek");
+        this.lThursday = new JLabel("Thursday");
         this.lThursday.setBounds(298, 5, 90, 90);
         this.lThursday.setFont(new Font("Arial", Font.BOLD, 12));
         
-        this.lFriday = new JLabel("Pi¹tek");
+        this.lFriday = new JLabel("Friday");
         this.lFriday.setBounds(396, 5, 90, 90);
         this.lFriday.setFont(new Font("Arial", Font.BOLD, 12));
         
-        this.lSaturday = new JLabel("Sobota");
-        this.lSaturday.setBounds(484, 5, 90, 90);
+        this.lSaturday = new JLabel("Saturday");
+        this.lSaturday.setBounds(478, 5, 90, 90);
         this.lSaturday.setFont(new Font("Arial", Font.BOLD, 12));
         
-        this.lSunday = new JLabel("Niedziela");
+        this.lSunday = new JLabel("Sunday");
         this.lSunday.setBounds(570, 5, 90, 90);
         this.lSunday.setFont(new Font("Arial", Font.BOLD, 12));
         
+        /*PRZYCISKI DNI KALENDARZA*/
         int j = 0, k = 0, l = -1;
         int dayHas = 14 + this.getDayOfWeek() - this.getDayNOW();
         for(int i = 0; i < this.button.length; i++) {
-            if(i%7==0 && i!=0) {
-                j=0;
+            if(i % 7 == 0 && i != 0) {
+                j = 0;
                 k++;
             }
             this.setButton(new JButton(), i);
             if(dayHas <= i)
                 l++;
-            if(l>=0 && l<this.getDayOfMonth())
+            if(l >= 0 && l < this.getDayOfMonth())
                 this.button[i].setText(Integer.toString(l+1));
-            if(l==this.getDayNOW()-1)
+            if(l == this.getDayNOW() - 1)
                 this.button[i].setForeground(Color.RED);
             
             this.button[i].setFont(new Font("Arial", Font.BOLD, 20));
             this.button[i].setBorder(javax.swing.BorderFactory.createLineBorder(Color.BLACK, 1));
-            this.button[i].setBounds(10+(j*90), 60+(k*105), 85, 100);
+            this.button[i].setBounds(10 + (j * 90), 60 + (k * 105), 85, 100);
             j++;
         }
     }
 
-    public final String getNameMonth() {
+    /*GETTERY I SETTERY*/
+    public JLabel getlMenu() {
+		return lMenu;
+	}
+
+	public void setlMenu(JLabel lMenu) {
+		this.lMenu = lMenu;
+	}
+
+	public final String getNameMonth() {
         return nameMonth;
     }
 
@@ -327,9 +340,9 @@ public class Kalendarz extends JPanel implements ActionListener {
         this.button[i] = but;
     }
     
-    
+    /*OBS£UGA ZDARZEÑ DNIA W MIESI¥CU - NIE ZDEFINIOWANO*/
     @Override
-    public void actionPerformed(ActionEvent ae) {
+    public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

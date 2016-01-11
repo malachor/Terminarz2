@@ -8,11 +8,12 @@ import java.awt.Container;
 
 public class Panel extends JFrame {
 
-    /**
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
+	/*MAIN - START PROGRAMU*/
 	public static void main(String[] args) throws IOException, InterruptedException {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -26,9 +27,10 @@ public class Panel extends JFrame {
         });
     }
     
-    /*---KONSTRUKTOR RAMKI---*/
+    /*KONSTRUKTOR RAMKI PANEL, DODAWANIE ELEMENTÓW*/
     public Panel() {
         Kalendarz app = new Kalendarz();
+        Menu appmenu = new Menu();
         setTitle(getClass().getSimpleName());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(70,70,1100,750);
@@ -43,8 +45,10 @@ public class Panel extends JFrame {
         this.add(app.getlFriday());
         this.add(app.getlSaturday());
         this.add(app.getlSunday());
+        this.add(app.getlMenu());
         for(int i = 0; i < app.getButton().length; i++)
             this.add(app.getButton(i));
+        this.add(appmenu.getButton_note());
     }
     
 }
