@@ -27,7 +27,7 @@ public class Panel extends JFrame {
         });
     }
     
-    /*KONSTRUKTOR RAMKI PANEL, DODAWANIE ELEMENTÓW*/
+    /*KONSTRUKTOR RAMKI PANEL, DODAWANIE ELEMENTOW*/
     public Panel() {
         Kalendarz app = new Kalendarz();
         Menu appmenu = new Menu();

@@ -30,7 +30,7 @@ public class Notatka extends JPanel implements ActionListener {
 		this.confirm.addActionListener(this);
 	}
 	
-	/*ZAPIS WSPÓ£RZÊDNYCH DO PLIKU*/
+	/*ZAPIS WSPOLRZÊDNYCH DO PLIKU*/
 	public void reader(String tekst) {
 		String fileName = "Notatka.txt";
 		try(
@@ -56,7 +56,7 @@ public class Notatka extends JPanel implements ActionListener {
 		this.confirm = confirm;
 	}
 	
-	/*OBS£UGA ZDARZEÑ*/
+	/*OBSLUGA ZDARZEN*/
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object source = e.getSource();

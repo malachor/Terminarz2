@@ -12,7 +12,7 @@ public class NotatkaFrame extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	/*KONSTRUKTORA RAMKI NOTATKI, DODAWANIE ELEMENTÓW*/
+	/*KONSTRUKTOR RAMKI NOTATKI, DODAWANIE ELEMENTOW*/
 	public NotatkaFrame() {
 		Notatka note = new Notatka();
 		setTitle("Notatka");

@@ -26,7 +26,7 @@ public class Menu implements ActionListener {
 		this.button_note = but;
 	}
 
-	/*OBS£UGA ZDARZEÑ PRZYCISKU ADD THE NOTE*/
+	/*OBSLUGA ZDARZEN PRZYCISKU ADD THE NOTE*/
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object source = e.getSource();

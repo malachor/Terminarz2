@@ -340,7 +340,7 @@ public class Kalendarz extends JPanel implements ActionListener {
         this.button[i] = but;
     }
     
-    /*OBS£UGA ZDARZEÑ DNIA W MIESI¥CU - NIE ZDEFINIOWANO*/
+    /*OBSLUGA ZDARZEN DNIA W MIESIACU - NIE ZDEFINIOWANO*/
     @Override
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
