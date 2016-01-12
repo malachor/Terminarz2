@@ -49,6 +49,7 @@ public class Panel extends JFrame {
         for(int i = 0; i < app.getButton().length; i++)
             this.add(app.getButton(i));
         this.add(appmenu.getButton_note());
+        this.add(appmenu.getButton_edit());
     }
     
 }

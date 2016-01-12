@@ -3,7 +3,9 @@ package appTerminarz;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -11,27 +13,22 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-public class Notatka extends JPanel implements ActionListener {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 2983557025711430135L;
-	
+public class NotatkaEdit extends JPanel implements ActionListener {
 	private JTextArea text;
-	private JButton confirm;
+	private JButton update;
 	
 	/*KONSTRUKTOR*/
-	public Notatka() {
-		this.text = new JTextArea("Pole tekstowe");
+	public NotatkaEdit() {
+		this.text = new JTextArea(odczytaj());
 		this.text.setBounds(10, 10, 400, 190);
 		this.text.setBorder(javax.swing.BorderFactory.createLineBorder(Color.BLACK, 1));
-		this.confirm = new JButton("Zapisz");
-		this.confirm.setBounds(10, 200, 400, 50);
-		this.confirm.addActionListener(this);
+		this.update = new JButton("Uaktualnij");
+		this.update.setBounds(10, 200, 400, 50);
+		this.update.addActionListener(this);
 	}
 	
 	/*ZAPIS WSPOLRZÊDNYCH DO PLIKU*/
-	public void reader(String tekst) {
+	public void zapisz(String tekst) {
 		String fileName = "Notatka.txt";
 		try(
 				BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
@@ -42,6 +39,28 @@ public class Notatka extends JPanel implements ActionListener {
 		}
 	}
 	
+	public String odczytaj() {
+		String fileName = "Notatka.txt";
+		BufferedReader reader = null;
+		String template = "";
+		try {
+			reader = new BufferedReader(new FileReader(fileName));
+			String tmp = null;
+			while((tmp = reader.readLine()) != null) {
+				template += tmp;
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				reader.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return template;	
+	}
+	
 	/*GETTERY I SETTERY*/
 	public JTextArea getText() {
 		return text;
@@ -49,23 +68,21 @@ public class Notatka extends JPanel implements ActionListener {
 	public void setText(JTextArea text) {
 		this.text = text;
 	}
-	public JButton getConfirm() {
-		return confirm;
+	public JButton getUpdate() {
+		return update;
 	}
-	public void setConfirm(JButton confirm) {
-		this.confirm = confirm;
+	public void setUpdate(JButton update) {
+		this.update = update;
 	}
-	
-	/*OBSLUGA ZDARZEN*/
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object source = e.getSource();
-		if(source == confirm) {
+		if(source == update) {
 			String textArea = text.getText();
-			reader(textArea);
+			zapisz(textArea);
 		}
 		// TODO Auto-generated method stub
 		
 	}
-
 }
