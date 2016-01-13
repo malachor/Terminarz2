@@ -19,7 +19,7 @@ public class Kalendarz extends JPanel implements ActionListener {
 	private int dayOfWeek;
     private int monthOfYear;
     private int dayOfMonth;
-    private String[] Miesiace;
+//    private String[] Miesiace;
     private int yearNOW;
     private int monthNameNOW;
     private int dayNOW;
@@ -38,7 +38,7 @@ public class Kalendarz extends JPanel implements ActionListener {
     
     /*KONSTRUKTOR KALENDARZ - UTWORZENIE*/
     public Kalendarz() {
-        this.button = new JButton[42];
+        this.button = new JButton[35];
         GregorianCalendar nowDate = new GregorianCalendar();
         this.setYearNOW(nowDate.get(Calendar.YEAR));
         this.setMonthNameNOW(nowDate.get(Calendar.MONTH));
@@ -120,6 +120,7 @@ public class Kalendarz extends JPanel implements ActionListener {
             this.setDayOfWeek(7);
         
         //ETYKIETY
+        
         this.lMonth = new JLabel(this.getNameMonth());
         this.lMonth.setBounds(295, -25, 90, 90);
         this.lMonth.setFont(new Font("Arial", Font.BOLD, 20));
@@ -184,9 +185,9 @@ public class Kalendarz extends JPanel implements ActionListener {
 		return lMenu;
 	}
 
-	public void setlMenu(JLabel lMenu) {
-		this.lMenu = lMenu;
-	}
+//	public void setlMenu(JLabel lMenu) {
+//		this.lMenu = lMenu;
+//	}
 
 	public final String getNameMonth() {
         return nameMonth;
@@ -220,25 +221,25 @@ public class Kalendarz extends JPanel implements ActionListener {
         this.dayOfMonth = dayOfMonth;
     }
 
-    public String[] getMiesiace() {
-        return Miesiace;
-    }
+//    public String[] getMiesiace() {
+//        return Miesiace;
+//    }
 
-    public void setMiesiace(String[] Miesiace) {
-        this.Miesiace = Miesiace;
-    }
+//    public void setMiesiace(String[] Miesiace) {
+//        this.Miesiace = Miesiace;
+//    }
 
-    public int getYearNOW() {
-        return yearNOW;
-    }
+//    public int getYearNOW() {
+//        return yearNOW;
+//    }
 
     public final void setYearNOW(int yearNOW) {
         this.yearNOW = yearNOW;
     }
 
-    public int getMonthNameNOW() {
-        return monthNameNOW;
-    }
+//    public int getMonthNameNOW() {
+//        return monthNameNOW;
+//    }
 
     public final void setMonthNameNOW(int monthNameNOW) {
         this.monthNameNOW = monthNameNOW;
@@ -332,9 +333,9 @@ public class Kalendarz extends JPanel implements ActionListener {
         return button[i];
     }
 
-    public void setButton(JButton[] button) {
-        this.button = button;
-    }
+//    public void setButton(JButton[] button) {
+//        this.button = button;
+//    }
     
     public final void setButton(JButton but, int i) {
         this.button[i] = but;

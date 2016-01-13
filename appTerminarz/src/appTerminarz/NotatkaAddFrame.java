@@ -16,7 +16,6 @@ public class NotatkaAddFrame extends JFrame {
 	public NotatkaAddFrame() {
 		NotatkaAdd note = new NotatkaAdd();
 		setTitle("Notatka");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(1100,70,450,300);
 		Container contentPane = new JPanel();
 		contentPane.setLayout(null);

@@ -50,6 +50,7 @@ public class Panel extends JFrame {
             this.add(app.getButton(i));
         this.add(appmenu.getButton_note());
         this.add(appmenu.getButton_edit());
+        this.add(appmenu.getButton_terminarz());
     }
     
 }
